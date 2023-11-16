@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "47467f21-934e-4a3f-9be4-32da7f4f16b6",
+		"name": "Public_api Colection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31002763"
+	},
+	"item": [
+		{
+			"name": "get_image",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "{{apiKey}}",
+						"key": "x-api-key",
+						"in": "header"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": "https://cdn2.thedogapi.com/images/4NWunSWE1.jpg"
+			},
+			"response": []
+		},
+		{
+			"name": "getData_byId",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "{{apiKey}}",
+						"key": "x-api-key",
+						"in": "header"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.thedogapi.com/v1/images/4NWunSWE1?id=4NWunSWE1",
+					"protocol": "https",
+					"host": [
+						"api",
+						"thedogapi",
+						"com"
+					],
+					"path": [
+						"v1",
+						"images",
+						"4NWunSWE1"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "4NWunSWE1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Favourites",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "{{apiKey}}",
+						"key": "x-api-key",
+						"in": "header"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"image_id\":\"69\",\n\t\"sub_id\": \"my-user-1234\"\n}"
+				},
+				"url": "https://api.thedogapi.com/v1/favourites"
+			},
+			"response": []
+		},
+		{
+			"name": "updateVotes",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"key": "x-api-key",
+						"value": "{{apiKey}}",
+						"in": "header"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"image_id\":\"63\",\n\t\"sub_id\": \"my-user-1234\",\n    \"value\":2\n}"
+				},
+				"url": "https://api.thedogapi.com/v1/votes"
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": {
+						"value": "{{apiKey}}",
+						"key": "x-api-key",
+						"in": "header"
+					}
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://api.thedogapi.com/v1/favourites/:favourite_id",
+					"protocol": "https",
+					"host": [
+						"api",
+						"thedogapi",
+						"com"
+					],
+					"path": [
+						"v1",
+						"favourites",
+						":favourite_id"
+					],
+					"variable": [
+						{
+							"key": "favourite_id",
+							"value": "85838"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": {
+			"in": "header",
+			"value": "{{apiKey}}",
+			"key": "x-api-key"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
